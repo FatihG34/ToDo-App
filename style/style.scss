@@ -53,6 +53,36 @@ body{
 
             .todo_items{
                 min-width: 24rem;
+              
+                div{
+                    display:flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1rem;
+                    padding: 1rem;
+                }
+
+
+                li{
+                    font-size: 1.5rem;
+                    font-style: oblique;
+                    font-variant:small-caps;
+                    border-bottom: 1px solid #1053ba;
+                    width: 80%;
+                    margin-left: 4px;
+                    list-style: none;
+                }
+
+
+                .delete{
+                background-color: #1053ba;
+                color: white;
+                border:none;
+                border-radius: 4px;
+                padding: .5rem .75rem;
+                font-size: 1rem;
+                }
             }
 
         }
