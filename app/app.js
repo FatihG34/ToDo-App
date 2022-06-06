@@ -13,20 +13,32 @@ addBtn.addEventListener(`click`, () => {
     if (!todoText.value) {
         alert(`Enter an Aim ToDo !!!`);
     } else {
+        listField.style.backgroundColor = "white";
         todoItems.innerHTML += `
         <div class="listDiv">
-        <input type="checkbox" name="" id="todocheck">
+        <input type="checkbox" name="checkbox" id="todocheck">
         <li>${todoText.value}</li>
         <button class="delete">Delete</button>
         </div>`;
-        todoItems.value = ``;
+        todoText.value = ``;
     }
 })
 
+todoText.addEventListener("keydown", (e) => {
+    if (e.keyCode === 13) {
+        addBtn.click();
+    }
+});
+
 //* burası çalışmadı
-if (todoItems.childElementCount > 0) {
-    const delet = document.lastElementChild;
-    delet.addEventListener(`click`, () => {
-        document.querySelector("body").style.backgroundColor = "black";
-    });
-};
+// const delet = listField.querySelector(".listDiv").querySelector(".delete");
+// delet.addEventListener(`click`, () => {
+//     if (todoItems.childElementCount > 0) {
+//         todoItems.removeChild(todoItems.firstElementChild)
+//     };
+//     console.log(delet);
+// });
+
+window.onload = () => {
+    todoText.focus();
+} 
