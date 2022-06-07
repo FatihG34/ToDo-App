@@ -16,7 +16,7 @@ addBtn.addEventListener(`click`, () => {
         todoItems.style.backgroundColor = "white";
         todoItems.innerHTML += `
         <div class="listDiv">
-        <input type="checkbox" name="checkbox" id="todocheck">
+        <input type="checkbox" name="checkbox" id="todocheck" class="todocheck">
         <li>${todoText.value}</li>
         <button class="delete">Delete</button>
         </div>`;
@@ -35,7 +35,9 @@ todoItems.addEventListener(`click`, (e) => {
     if (e.target.classList.contains("delete")) {
         e.target.parentElement.remove();
     }
-    console.log("oldu mu");
+    else if (e.target.classList.contains("todocheck")) {
+        e.target.nextElementSibling.style.textDecoration = "line-through";
+    }
 });
 
 
